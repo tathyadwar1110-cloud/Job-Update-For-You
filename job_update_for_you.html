@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Job Update For You - Latest jobs, admit cards, results, syllabus and exam updates.">
+  <title>Job Update For You</title>
+  <style>
+    :root{--navy:#10264b;--blue:#2457d6;--cyan:#eaf3ff;--ink:#17243a;--muted:#64748b;--bg:#f5f7fb;--white:#fff;--line:#e5eaf2;--green:#13845b}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:inherit;text-decoration:none}.topbar{background:var(--navy);color:#dce8ff;padding:9px 5%;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{background:#fff;box-shadow:0 3px 16px #10264b12;position:sticky;top:0;z-index:5}.head{max-width:1180px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:23px;font-weight:800;color:var(--navy)}.brand span{color:var(--blue)}nav{display:flex;gap:19px;align-items:center;font-size:14px;font-weight:700}nav a:hover{color:var(--blue)}
+    .menu-btn{display:none;background:var(--blue);color:#fff;border:0;border-radius:8px;padding:9px 12px;font-size:18px}
+    .hero{background:linear-gradient(120deg,#10264b,#2457d6);color:#fff;padding:58px 22px 52px;text-align:center}.hero-inner{max-width:850px;margin:auto}.eyebrow{display:inline-block;background:#ffffff20;border:1px solid #ffffff40;padding:7px 13px;border-radius:30px;font-size:12px;letter-spacing:.5px}
+    h1{font-size:clamp(32px,5vw,52px);margin:17px 0 12px}.hero p{color:#e2eaff;line-height:1.6;margin:0 auto 25px;max-width:650px}
+    .search{display:flex;max-width:620px;margin:auto;background:#fff;padding:6px;border-radius:12px;box-shadow:0 8px 24px #071b4428}.search input{flex:1;min-width:0;border:0;outline:0;padding:13px 14px;font-size:15px}.search button,.btn{border:0;background:#ffbd38;color:#18233a;font-weight:800;padding:12px 20px;border-radius:9px;cursor:pointer}
+    .wrap{max-width:1180px;margin:36px auto;padding:0 22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px}.section-head h2{margin:0;font-size:25px;color:var(--navy)}.section-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    .categories{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}.cat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 10px;text-align:center;font-weight:700;box-shadow:0 4px 14px #10264b08;transition:.2s}.cat:hover{transform:translateY(-3px);border-color:#b8cafa}.cat .emoji{font-size:25px;display:block;margin-bottom:9px}.cat small{display:block;color:var(--muted);font-weight:400;margin-top:5px}
+    .layout{display:grid;grid-template-columns:1.8fr 1fr;gap:22px}.jobs{display:grid;gap:13px}.job{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px;display:flex;justify-content:space-between;gap:14px;align-items:center}.job h3{font-size:16px;margin:0 0 8px;color:var(--navy)}.meta{font-size:13px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}.tag{display:inline-block;background:#eaf7f1;color:var(--green);padding:5px 9px;border-radius:20px;font-size:11px;font-weight:700;margin-bottom:8px}.view{white-space:nowrap;background:var(--cyan);color:var(--blue);padding:9px 13px;border-radius:8px;font-size:13px;font-weight:700}
+    .side{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px;height:max-content}.side h3{margin:0 0 14px;color:var(--navy)}.side a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}.side a:last-child{border:0}.side a:hover{color:var(--blue)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{background:#fff;padding:21px;border:1px solid var(--line);border-radius:13px}.feature b{color:var(--navy);display:block;margin:8px 0}.feature p{color:var(--muted);font-size:14px;line-height:1.55;margin:0}.feature span{font-size:25px}
+    .notice{background:#fff8e8;border:1px solid #ffe3a6;color:#76510b;padding:15px 18px;border-radius:11px;font-size:13px;line-height:1.5}
+    footer{background:var(--navy);color:#dbe6fb;padding:34px 22px;margin-top:45px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{font-size:19px;color:#fff}.foot p{font-size:13px;line-height:1.6;max-width:520px}.foot a{color:#fff;margin-right:13px;font-size:13px}
+    .empty{display:none;text-align:center;padding:25px;color:var(--muted);background:#fff;border-radius:12px}
+    @media(max-width:850px){nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:18px 22px;box-shadow:0 8px 14px #10264b18;flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu-btn{display:block}.categories{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}}
+    @media(max-width:520px){.topbar{justify-content:center}.head{padding:14px 17px}.brand{font-size:20px}.hero{padding:43px 17px}.search button{padding:11px 13px}.wrap{padding:0 16px;margin:28px auto}.categories{gap:9px}.cat{padding:14px 5px;font-size:13px}.cat .emoji{font-size:22px}.job{align-items:flex-start}.view{font-size:12px;padding:8px}.features{grid-template-columns:1fr}.section-head h2{font-size:22px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><span>Welcome to Job Update For You</span><span>Jobs • Admit Cards • Results • Exam Updates</span></div>
+  <header>
+    <div class="head">
+      <a class="brand" href="#">Job Update <span>For You</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      <nav id="nav"><a href="#home">Home</a><a href="#latest">Latest Jobs</a><a href="#categories">Categories</a><a href="#study">Study Materials</a><a href="#contact">Contact</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home"><div class="hero-inner">
+      <span class="eyebrow">YOUR CAREER UPDATE DESTINATION</span>
+      <h1>Job Update For You</h1>
+      <p>Find the latest government job notifications, admit cards, results, syllabus, answer keys and study materials in one place.</p>
+      <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Search jobs, results, admit cards..." aria-label="Search updates"><button type="submit">Search</button></form>
+    </div></section>
+    <section class="wrap" id="categories">
+      <div class="section-head"><div><h2>Explore Categories</h2><p>Choose a section to find the updates you need.</p></div></div>
+      <div class="categories">
+        <a class="cat" href="#latest" data-filter="Latest Jobs"><span class="emoji">💼</span>Latest Jobs<small>New vacancies</small></a>
+        <a class="cat" href="#latest" data-filter="Admit Card"><span class="emoji">🎫</span>Admit Card<small>Hall tickets</small></a>
+        <a class="cat" href="#latest" data-filter="Results"><span class="emoji">🏆</span>Results<small>Exam results</small></a>
+        <a class="cat" href="#latest" data-filter="Syllabus"><span class="emoji">📚</span>Syllabus<small>Exam pattern</small></a>
+        <a class="cat" href="#latest" data-filter="Answer Key"><span class="emoji">📝</span>Answer Key<small>Solutions</small></a>
+        <a class="cat" href="#study"><span class="emoji">🧠</span>Mock Test<small>Practice tests</small></a>
+      </div>
+    </section>
+    <section class="wrap" id="latest">
+      <div class="section-head"><div><h2>Latest Updates</h2><p>Sample cards — replace these with verified, current notices.</p></div></div>
+      <div class="layout">
+        <div>
+          <div class="jobs" id="jobList">
+            <article class="job" data-search="latest jobs recruitment vacancy notification"><div><span class="tag">LATEST JOBS</span><h3>New Recruitment Notification</h3><div class="meta"><span>📅 Update date: Add date</span><span>📍 All India</span></div></div><a class="view" href="#contact">View Details</a></article>
+            <article class="job" data-search="admit card hall ticket download"><div><span class="tag">ADMIT CARD</span><h3>Admit Card Download Update</h3><div class="meta"><span>📅 Exam date: Add date</span><span>📄 Hall Ticket</span></div></div><a class="view" href="#contact">View Details</a></article>
+            <article class="job" data-search="results merit list scorecard"><div><span class="tag">RESULTS</span><h3>Exam Result & Merit List</h3><div class="meta"><span>📅 Result date: Add date</span><span>🏅 Scorecard</span></div></div><a class="view" href="#contact">View Details</a></article>
+            <article class="job" data-search="syllabus exam pattern pdf"><div><span class="tag">SYLLABUS</span><h3>Exam Syllabus & Pattern PDF</h3><div class="meta"><span>📘 PDF resource</span><span>📖 Exam preparation</span></div></div><a class="view" href="#study">View Details</a></article>
+            <article class="job" data-search="answer key question paper solution"><div><span class="tag">ANSWER KEY</span><h3>Answer Key & Question Paper</h3><div class="meta"><span>📝 Answer solutions</span><span>📄 PDF resource</span></div></div><a class="view" href="#study">View Details</a></article>
+          </div>
+          <div class="empty" id="emptyState">No matching updates found. Try another keyword.</div>
+        </div>
+        <aside class="side"><h3>Quick Links</h3><a href="#latest">Latest Government Jobs →</a><a href="#latest">Admit Card Updates →</a><a href="#latest">Check Results →</a><a href="#latest">Syllabus & Exam Pattern →</a><a href="#study">Free Study Materials →</a><a href="#study">Daily Current Affairs →</a></aside>
+      </div>
+    </section>
+    <section class="wrap" id="study">
+      <div class="section-head"><div><h2>Study & Preparation</h2><p>Resources to support your exam preparation.</p></div></div>
+      <div class="features">
+        <div class="feature"><span>🧪</span><b>Mock Test</b><p>Add practice tests and quizzes to help visitors prepare for upcoming exams.</p></div>
+        <div class="feature"><span>📥</span><b>Free PDF</b><p>Share notes, previous year papers, syllabus and other downloadable materials.</p></div>
+        <div class="feature"><span>📰</span><b>Daily Current Affairs</b><p>Publish regular current-affairs updates and important general knowledge.</p></div>
+        <div class="feature"><span>🗓️</span><b>Exam Date</b><p>Post official exam schedules, application deadlines and important dates.</p></div>
+        <div class="feature"><span>📖</span><b>Study Materials</b><p>Organize subject-wise notes and exam-focused learning resources.</p></div>
+        <div class="feature"><span>🔔</span><b>Latest Alerts</b><p>Keep readers informed about newly published official notifications.</p></div>
+      </div>
+    </section>
+    <section class="wrap"><div class="notice"><strong>Important:</strong> This is a starter website template. The sample notices are placeholders, not real job announcements. Add verified information, official notification links, application links and PDF files before publishing.</div></section>
+  </main>
+  <footer id="contact"><div class="foot"><div><strong>Job Update For You</strong><p>Your one-stop destination for job notifications, admit cards, results, syllabus and exam preparation resources.</p></div><div><strong>Contact</strong><p>Replace this section with your official email address and social media links.</p><a href="#home">Back to top ↑</a></div></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('nav');
+    menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+    const input=document.getElementById('searchInput'), list=document.getElementById('jobList'), empty=document.getElementById('emptyState');
+    function filterJobs(term){let count=0;const q=term.trim().toLowerCase();list.querySelectorAll('.job').forEach(card=>{const match=(card.innerText+' '+card.dataset.search).toLowerCase().includes(q);card.style.display=match?'flex':'none';if(match)count++;});empty.style.display=count?'none':'block';}
+    document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();filterJobs(input.value);document.getElementById('latest').scrollIntoView({behavior:'smooth'});});
+    document.querySelectorAll('[data-filter]').forEach(link=>link.addEventListener('click',()=>{input.value=link.dataset.filter;filterJobs(input.value);}));
+  </script>
+</body>
+</html>
